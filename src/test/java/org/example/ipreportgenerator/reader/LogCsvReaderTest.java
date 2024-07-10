@@ -1,11 +1,10 @@
-package org.example.ipreportgenerator;
+package org.example.ipreportgenerator.reader;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Path;
-import org.example.ipreportgenerator.reader.LogCsvReader;
+import org.example.ipreportgenerator.util.PathUtils;
 import org.junit.jupiter.api.Test;
 
 class LogCsvReaderTest {
@@ -13,14 +12,14 @@ class LogCsvReaderTest {
 
   @Test
   void readEmptyLogsTest() throws IOException, URISyntaxException {
-    var testFile = Path.of(getClass().getClassLoader().getResource("empty.log").toURI());
+    var testFile = PathUtils.getTestFile("empty.log");
     var logs = logCsvReader.readLogs(testFile);
     assertEquals(0, logs.size());
   }
 
   @Test
   void readLogsTest() throws IOException, URISyntaxException {
-    var testFile = Path.of(getClass().getClassLoader().getResource("test.log").toURI());
+    var testFile = PathUtils.getTestFile("test.log");
     var logs = logCsvReader.readLogs(testFile);
     assertEquals(5, logs.size());
   }
