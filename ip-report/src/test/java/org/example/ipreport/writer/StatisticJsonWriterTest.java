@@ -43,16 +43,16 @@ class StatisticJsonWriterTest extends StatisticsWriteTest {
                       {
                         "ip": "127.0.0.1",
                         "requests": 42,
-                        "percentageRequests": "50,50",
+                        "percentageRequests": "50.50",
                         "bytes": 1000,
-                        "percentageBytes": "25,23"
+                        "percentageBytes": "25.23"
                       },
                       {
                         "ip": "127.0.0.1",
                         "requests": 42,
-                        "percentageRequests": "50,50",
+                        "percentageRequests": "50.50",
                         "bytes": 1000,
-                        "percentageBytes": "25,23"
+                        "percentageBytes": "25.23"
                       }
                       ]""",
           lines);

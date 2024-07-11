@@ -36,6 +36,6 @@ class StatisticCsvWriterTest extends StatisticsWriteTest {
     statisticCsvWriter.writeStatistics(List.of(statistic), testFile);
     var lines = Files.readAllLines(testFile);
     assertEquals(1, lines.size());
-    assertEquals("127.0.0.1;42;50,50;1000;25,23", lines.getFirst());
+    assertEquals("127.0.0.1;42;50.50;1000;25.23", lines.getFirst());
   }
 }
