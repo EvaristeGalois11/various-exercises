@@ -1,0 +1,16 @@
+[
+{
+  "ip": "127.0.0.1",
+  "requests": 3,
+  "percentageRequests": "60,00",
+  "bytes": 1080,
+  "percentageBytes": "72,97"
+},
+{
+  "ip": "198.168.0.1",
+  "requests": 2,
+  "percentageRequests": "40,00",
+  "bytes": 400,
+  "percentageBytes": "27,03"
+}
+]

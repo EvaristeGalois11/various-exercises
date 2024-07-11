@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.example.ipreport.model.Statistic;
 
 public class StatisticCsvWriter implements StatisticWriter {
@@ -27,11 +28,8 @@ public class StatisticCsvWriter implements StatisticWriter {
 
   @Override
   public void writeStatistics(List<Statistic> statistics, Path path) throws IOException {
-    try (var writer = Files.newBufferedWriter(path)) {
-      for (var statistic : statistics) {
-        writer.write(toCsv(statistic));
-      }
-    }
+    var csv = statistics.stream().map(this::toCsv).collect(Collectors.joining("\n"));
+    Files.writeString(path, csv);
   }
 
   private String toCsv(Statistic statistic) {

@@ -44,7 +44,6 @@ public class IpReport {
     writeReport(statistics, output, type);
   }
 
-  // TODO Filter by timestamp
   private static List<Log> readAndFilterLogs(Path input) throws IOException {
     var reader = new LogCsvReader();
     return reader.readLogs(input).stream().filter(log -> log.status() == 200).toList();

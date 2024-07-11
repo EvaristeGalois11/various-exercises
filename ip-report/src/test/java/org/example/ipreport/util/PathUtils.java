@@ -16,11 +16,19 @@
  */
 package org.example.ipreport.util;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class PathUtils {
   public static Path getTestFile(String file) throws URISyntaxException {
     return Path.of(PathUtils.class.getClassLoader().getResource(file).toURI());
+  }
+
+  public static void truncateFile(String file) throws IOException, URISyntaxException {
+    var path = PathUtils.getTestFile(file);
+    Files.deleteIfExists(path);
+    Files.createFile(path);
   }
 }
