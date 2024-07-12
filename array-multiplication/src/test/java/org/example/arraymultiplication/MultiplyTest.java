@@ -38,7 +38,7 @@ class MultiplyTest {
     var a = random.nextInt(-1000, 1000);
     var b = random.nextInt(-1000, 1000);
     var result = Multiply.multiply(a, b);
-    assertEquals(Long.toString(a * (long) b), result, "Multiply failed for " + a + " and " + b);
+    assertEquals(Integer.toString(a * b), result, "Multiply failed for " + a + " and " + b);
   }
 
   @Test
